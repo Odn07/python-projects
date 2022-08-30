@@ -1,3 +1,0 @@
-Additional information to projects file.
-This file is for test purpose only.
-No notice shall be given before deletion.
