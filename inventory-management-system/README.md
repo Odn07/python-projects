@@ -1,4 +1,4 @@
-INVENTRY MANAGEMENT SYSTEM
+INVENTORY MANAGEMENT SYSTEM
 
 This software can be used in any sales unit where products are stocked and sold to customers.
 
