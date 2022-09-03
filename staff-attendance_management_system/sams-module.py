@@ -350,32 +350,54 @@ def open_attendance_filename_file2():
     '''
     print(attendance3["counter"], ",", attendance3["date"], ",", "FILE NAME: ", filename_minus_csv)
 
-
+# receives name of attendance file name and display its content
 def view_staff_attendance():
-    # display list of stored file names for admin to easily make a choice
+    # function to display list of stored file names for admin to easily make a choice
     open_attendance_filename_file2()
-    file_input= input("Enter the staff attendance file name you wish to view: ")
+    # prompt user for file name
+    try:
+        file_input= input("Enter the staff attendance file name you wish to view: ")
+    except:
+        pass
+    # file name extension
     ext = ".csv"
+    # create file name
     staff_attendance_filename = f"{file_input + ext}"
     counter = 0
     cprint("\nSTAFF ATTENDANCE: \n", "yellow")
     attendance_list = []
+    # open file
     with open(staff_attendance_filename) as file:
         reader = csv.DictReader(file)
         for row in reader:
             attendance_list.append(row)
+    # display file content
     for attendance in attendance_list:
         counter += 1
         print(counter, ", ", attendance["day"], attendance["date"], ",", attendance["name"], ",", attendance["department"], ",", attendance["job"], ",", attendance["time"], ",", attendance["status"])
     print()
-    input_response = input("Type 's' to save and 'p' to print staff attendance: ").title()
+    
+    # save or print file content
+    try:
+        input_response = input("Type 's' to save and 'p' to print staff attendance: ").title()
+    except:
+        pass
     if not input_response:
         pass
     elif input_response == "S":
         ...
     elif input_response == "P":
         ...
-
+        
+        
+'''
+PROCESS ATTENDANCE:
+The function below takes attendance from staff and creates daily and monthly record. The user does not have 
+access to the daily attendance record, its for the internal running of the code only. At the beginning of every 
+working day a new daily attendance record is authomatically created while the one for the previous day is 
+authomatically deleted. Every entering in the daily record is copied into the monthly record. The user can view,
+print and save monthly attendance record.
+'''
 
 def process_attendance():
     cprint("\nSIGN-IN/SIGN-OUT: \n", "green")
