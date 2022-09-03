@@ -30,17 +30,7 @@ username/password created in the staff personal record. If the username/password
 then go ahead and process staff.  
 
 6. The program will use username as a condition to either sign-in a staff or sign them out. so, if 
-the username is in record sign-in/sign-out staff. 
-
-THE CODE WILL LOOK LIKE THIS:
-
-if username/password in employee personal file:         
-            sign-in employee
-        else:
-            sign-out employee
-else:
-    ask user to create username/password.
-    
+the username is in record sign-in/sign-out staff.     
             
 7. At the beginning of every month a new attendance record will be created. To accomplish this 
 the program need to be able to identify the first day of every month and then use it to create a
